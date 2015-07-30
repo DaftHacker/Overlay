@@ -116,7 +116,7 @@ namespace Overlay
                 //}
                 //if (WB.Url.ToString().Contains("youtube.com/watch?v="))
                 //{
-                //    LoadVideo(WB.Url.ToString());
+                //    LoadSearch(WB.Url.ToString());
                 //    return;
                 //}
                 //if (WB.ScrollBarsEnabled)

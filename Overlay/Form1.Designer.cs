@@ -50,7 +50,7 @@
             this.WB.Location = new System.Drawing.Point(0, 30);
             this.WB.Name = "WB";
             this.WB.ScrollBarsEnabled = false;
-            this.WB.Size = new System.Drawing.Size(720, 407);
+            this.WB.Size = new System.Drawing.Size(720, 405);
             this.WB.TabIndex = 0;
             this.WB.TabStop = false;
             this.WB.Url = new System.Uri("http://z", System.UriKind.Absolute);
@@ -235,7 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(720, 76);
             this.Controls.Add(this.settings_panel);
             this.Controls.Add(this.drag_panel);
