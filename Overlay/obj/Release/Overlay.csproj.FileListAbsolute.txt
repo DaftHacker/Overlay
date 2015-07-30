@@ -1,0 +1,9 @@
+C:\Users\Daniel\Dropbox\Visual Studio Projects\Overlay\Overlay\bin\Release\Overlay.exe.config
+C:\Users\Daniel\Dropbox\Visual Studio Projects\Overlay\Overlay\bin\Release\Overlay.exe
+C:\Users\Daniel\Dropbox\Visual Studio Projects\Overlay\Overlay\bin\Release\Overlay.pdb
+C:\Users\Daniel\Dropbox\Visual Studio Projects\Overlay\Overlay\obj\Release\Overlay.Form1.resources
+C:\Users\Daniel\Dropbox\Visual Studio Projects\Overlay\Overlay\obj\Release\Overlay.Properties.Resources.resources
+C:\Users\Daniel\Dropbox\Visual Studio Projects\Overlay\Overlay\obj\Release\Overlay.csproj.GenerateResource.Cache
+C:\Users\Daniel\Dropbox\Visual Studio Projects\Overlay\Overlay\obj\Release\Overlay.exe
+C:\Users\Daniel\Dropbox\Visual Studio Projects\Overlay\Overlay\obj\Release\Overlay.pdb
+C:\Users\Daniel\Dropbox\Visual Studio Projects\Overlay\Overlay\obj\Release\Overlay.csprojResolveAssemblyReference.cache
