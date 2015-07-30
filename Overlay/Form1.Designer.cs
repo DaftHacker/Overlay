@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.WB = new System.Windows.Forms.WebBrowser();
-            this.submit_web_address = new System.Windows.Forms.Button();
-            this.web_address = new System.Windows.Forms.TextBox();
+            this.submit_web_search = new System.Windows.Forms.Button();
+            this.web_search = new System.Windows.Forms.TextBox();
             this.web_panel = new System.Windows.Forms.Panel();
             this.web_address_background = new System.Windows.Forms.Panel();
             this.drag_panel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.contract = new System.Windows.Forms.Button();
             this.expand = new System.Windows.Forms.Button();
             this.settings_button = new System.Windows.Forms.Button();
             this.webpage_back = new System.Windows.Forms.Button();
             this.exit_program = new System.Windows.Forms.Button();
             this.settings_panel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.web_panel.SuspendLayout();
             this.drag_panel.SuspendLayout();
             this.SuspendLayout();
@@ -55,36 +55,36 @@
             this.WB.TabStop = false;
             this.WB.Url = new System.Uri("http://z", System.UriKind.Absolute);
             // 
-            // submit_web_address
+            // submit_web_search
             // 
-            this.submit_web_address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(137)))), ((int)(((byte)(239)))));
-            this.submit_web_address.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(137)))), ((int)(((byte)(239)))));
-            this.submit_web_address.FlatAppearance.BorderSize = 0;
-            this.submit_web_address.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submit_web_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.3F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submit_web_address.ForeColor = System.Drawing.Color.White;
-            this.submit_web_address.Location = new System.Drawing.Point(633, 42);
-            this.submit_web_address.Name = "submit_web_address";
-            this.submit_web_address.Size = new System.Drawing.Size(75, 23);
-            this.submit_web_address.TabIndex = 1;
-            this.submit_web_address.Text = "Search";
-            this.submit_web_address.UseVisualStyleBackColor = false;
-            this.submit_web_address.Click += new System.EventHandler(this.SubmitVideo_Click);
+            this.submit_web_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(137)))), ((int)(((byte)(239)))));
+            this.submit_web_search.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(137)))), ((int)(((byte)(239)))));
+            this.submit_web_search.FlatAppearance.BorderSize = 0;
+            this.submit_web_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.submit_web_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.3F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submit_web_search.ForeColor = System.Drawing.Color.White;
+            this.submit_web_search.Location = new System.Drawing.Point(633, 42);
+            this.submit_web_search.Name = "submit_web_search";
+            this.submit_web_search.Size = new System.Drawing.Size(75, 23);
+            this.submit_web_search.TabIndex = 1;
+            this.submit_web_search.Text = "Search";
+            this.submit_web_search.UseVisualStyleBackColor = false;
+            this.submit_web_search.Click += new System.EventHandler(this.submit_web_search_Click);
             // 
-            // web_address
+            // web_search
             // 
-            this.web_address.AcceptsReturn = true;
-            this.web_address.BackColor = System.Drawing.Color.White;
-            this.web_address.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.web_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.web_address.ForeColor = System.Drawing.Color.Black;
-            this.web_address.Location = new System.Drawing.Point(17, 45);
-            this.web_address.Multiline = true;
-            this.web_address.Name = "web_address";
-            this.web_address.Size = new System.Drawing.Size(605, 16);
-            this.web_address.TabIndex = 2;
-            this.web_address.TabStop = false;
-            this.web_address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.VideoSource_KeyDown);
+            this.web_search.AcceptsReturn = true;
+            this.web_search.BackColor = System.Drawing.Color.White;
+            this.web_search.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.web_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.web_search.ForeColor = System.Drawing.Color.Black;
+            this.web_search.Location = new System.Drawing.Point(17, 45);
+            this.web_search.Multiline = true;
+            this.web_search.Name = "web_search";
+            this.web_search.Size = new System.Drawing.Size(605, 16);
+            this.web_search.TabIndex = 2;
+            this.web_search.TabStop = false;
+            this.web_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.web_search_KeyDown);
             // 
             // web_panel
             // 
@@ -119,6 +119,17 @@
             this.drag_panel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.drag_panel_MouseDown);
             this.drag_panel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.drag_panel_MouseMove);
             this.drag_panel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.drag_panel_MouseUp);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(254, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Resize";
             // 
             // contract
             // 
@@ -220,17 +231,6 @@
             this.settings_panel.Size = new System.Drawing.Size(720, 0);
             this.settings_panel.TabIndex = 5;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(254, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Resize";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,8 +239,8 @@
             this.ClientSize = new System.Drawing.Size(720, 76);
             this.Controls.Add(this.settings_panel);
             this.Controls.Add(this.drag_panel);
-            this.Controls.Add(this.web_address);
-            this.Controls.Add(this.submit_web_address);
+            this.Controls.Add(this.web_search);
+            this.Controls.Add(this.submit_web_search);
             this.Controls.Add(this.web_panel);
             this.Controls.Add(this.WB);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -258,8 +258,8 @@
         #endregion
 
         private System.Windows.Forms.WebBrowser WB;
-        private System.Windows.Forms.Button submit_web_address;
-        private System.Windows.Forms.TextBox web_address;
+        private System.Windows.Forms.Button submit_web_search;
+        private System.Windows.Forms.TextBox web_search;
         private System.Windows.Forms.Panel web_panel;
         private System.Windows.Forms.Panel drag_panel;
         private System.Windows.Forms.Panel web_address_background;

@@ -109,61 +109,51 @@ namespace Overlay
                 //MessageBox.Show(WB.Document.GetElementsByTagName("yt-error-content").Cast<HtmlElement>().FirstOrDefault().InnerText);
                 //MessageBox.Show(WB.DocumentText.ToString());
                 //It is restricted from playback on certain sites.
-                if (WB.Url.ToString().Contains("www.youtube.com/v/"))
-                {
+                //if (WB.Url.ToString().Contains("youtube.com/v/"))
+                //{
                     //MessageBox.Show(WB.Document.Body.OuterText);
                     //if (WB.)
-                }
-                if (WB.Url.ToString().Contains("watch?v="))
-                {
-                    LoadVideo(WB.Url.ToString());
-                    return;
-                }
+                //}
+                //if (WB.Url.ToString().Contains("youtube.com/watch?v="))
+                //{
+                //    LoadVideo(WB.Url.ToString());
+                //    return;
+                //}
                 //if (WB.ScrollBarsEnabled)
                 //{
                 //    WB.Document.Body.Style = "zoom:100%;";
                 //}
             }
         }
-        void LoadVideo(string VideoURL)
+        void LoadSearch(string Search)
         {
             web_panel.Hide();
             web_address_background.Hide();
-            submit_web_address.Hide();
-            web_address.Hide();
+            submit_web_search.Hide();
+            web_search.Hide();
 
-            if (VideoURL.Contains("watch?v="))
+            if (Search.Contains("youtube.com/watch?v="))
             {
-                string[] VideoString = VideoURL.Split(new string[] { "watch?v=" }, StringSplitOptions.None);
-                VideoURL = "https://www.youtube.com/v/" + VideoString[1];
-                WB.Navigate(VideoURL + "&autoplay=1&controls=1&cc_load_policy=0&iv_load_policy=3&vq=hd1080&modestbranding=1&rel=0&showinfo=1");
+                string[] VideoString = Search.Split(new string[] { "youtube.com/watch?v=" }, StringSplitOptions.None);
+                Search = "https://www.youtube.com/v/" + VideoString[1];
+                WB.Navigate(Search + "&autoplay=1&controls=1&cc_load_policy=0&iv_load_policy=3&vq=hd1080&modestbranding=1&rel=0&showinfo=1");
+            }
+            else if (Search.Contains("youtube.com/v/"))
+            {
+                string[] VideoString = Search.Split(new string[] { "youtube.com/v/" }, StringSplitOptions.None);
+                Search = "https://www.youtube.com/v/" + VideoString[1];
+                WB.Navigate(Search + "&autoplay=1&controls=1&cc_load_policy=0&iv_load_policy=3&vq=hd1080&modestbranding=1&rel=0&showinfo=1");
             }
             else
             {
                 WB.ScrollBarsEnabled = true;
-                //WB.ClientSize = new Size(100, 100); Resize window
-                //WB.Navigate("https://www.youtube.com/v/e-ORhEE9VVg&autoplay=1");
-                WB.Navigate("https://www.youtube.com/results?search_query=" + web_address.Text.Replace(" ", "+"));
+                WB.Navigate("https://www.google.com/?gws_rd=ssl#q=" + web_search.Text.Replace(" ", "+"));
+                //WB.Navigate("https://www.youtube.com/v/e-ORhEE9VVg&autoplay=1"); Testing blocked videos
+                //WB.Navigate("https://www.youtube.com/results?search_query=" + web_address.Text.Replace(" ", "+"));
             }
         }
 
-        private void VideoSource_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                this.Size = new Size(720, 435);
-                FormSize = this.Size;
-                LoadVideo(web_address.Text);
-            }
-        }
-        private void SubmitVideo_Click(object sender, EventArgs e)
-        {
-            this.Size = new Size(720, 435);
-            FormSize = this.Size;
-            LoadVideo(web_address.Text);
-        }
-
-        #region Drag panel mouse control
+        #region Drag Panel Mouse Control
         private void drag_panel_MouseUp(object sender, MouseEventArgs e)
         {
             MouseDownPoint = Point.Empty;
@@ -181,33 +171,15 @@ namespace Overlay
         }
         #endregion
 
-        private void exit_program_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        #region Controls
         private void webpage_back_Click(object sender, EventArgs e)
         {
             WB.GoBack();
             WB.GoBack();
         }
-
-        private void settings_button_Click(object sender, EventArgs e)
+        private void exit_program_Click(object sender, EventArgs e)
         {
-            if (!SettingsOpen)
-                SettingsOpen = true;
-            else
-                SettingsOpen = false;
-            Thread Animation = new Thread(SettingsAnimation);
-            Animation.Start();
-        }
-        private void SettingsAnimation()
-        {
-            if (SettingsOpen)
-                for (int i = 0; i <= 406; i++)
-                    settings_panel.Size = new Size(720, i);
-            else
-                for (int i = 406; i >= 0; i--)
-                    settings_panel.Size = new Size(720, i);
+            this.Close();
         }
 
         private void expand_MouseDown(object sender, MouseEventArgs e)
@@ -231,6 +203,42 @@ namespace Overlay
         private void contract_MouseUp(object sender, MouseEventArgs e)
         {
             ContractForm = false;
+        }
+
+        private void settings_button_Click(object sender, EventArgs e)
+        {
+            if (!SettingsOpen)
+                SettingsOpen = true;
+            else
+                SettingsOpen = false;
+            Thread Animation = new Thread(SettingsAnimation);
+            Animation.Start();
+        }
+        private void SettingsAnimation()
+        {
+            if (SettingsOpen)
+                for (int i = 0; i <= 406; i++)
+                    settings_panel.Size = new Size(720, i);
+            else
+                for (int i = 406; i >= 0; i--)
+                    settings_panel.Size = new Size(720, i);
+        }
+        #endregion
+
+        private void submit_web_search_Click(object sender, EventArgs e)
+        {
+            this.Size = new Size(720, 435);
+            FormSize = this.Size;
+            LoadSearch(web_search.Text);
+        }
+        private void web_search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.Size = new Size(720, 435);
+                FormSize = this.Size;
+                LoadSearch(web_search.Text);
+            }
         }
     }
 }
