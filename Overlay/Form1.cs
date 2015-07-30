@@ -23,7 +23,6 @@ namespace Overlay
         bool ExpandForm = false;
         bool ContractForm = false;
 
-
         Point MouseDownPoint = Point.Empty;
         System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
 
@@ -40,10 +39,6 @@ namespace Overlay
             t.Interval = 20;
             t.Tick += t_Tick;
             t.Start();
-
-            //Thread MonitorKeyPress = new Thread(MonitorKeyPresses);
-            //MonitorKeyPress.IsBackground = true;
-            //MonitorKeyPress.Start();
         }
 
         void t_Tick(object sender, EventArgs e)
