@@ -41,6 +41,8 @@
             this.webpage_back = new System.Windows.Forms.Button();
             this.exit_program = new System.Windows.Forms.Button();
             this.settings_panel = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.web_panel.SuspendLayout();
             this.drag_panel.SuspendLayout();
             this.SuspendLayout();
@@ -106,6 +108,8 @@
             // drag_panel
             // 
             this.drag_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(137)))), ((int)(((byte)(239)))));
+            this.drag_panel.Controls.Add(this.label2);
+            this.drag_panel.Controls.Add(this.textBox1);
             this.drag_panel.Controls.Add(this.label1);
             this.drag_panel.Controls.Add(this.contract);
             this.drag_panel.Controls.Add(this.expand);
@@ -231,6 +235,22 @@
             this.settings_panel.Size = new System.Drawing.Size(720, 0);
             this.settings_panel.TabIndex = 5;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(202, 7);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(22, 20);
+            this.textBox1.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(379, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "label2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +290,8 @@
         private System.Windows.Forms.Button expand;
         private System.Windows.Forms.Button contract;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
 
     }
 }
