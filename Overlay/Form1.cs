@@ -64,38 +64,21 @@ namespace Overlay
             }
 
 
+
+
+
             if (WB.Document != null)
             {
                 try
                 {
-                    var links = WB.Document.GetElementsByTagName("a");
-                    foreach (HtmlElement link in links)
+                    foreach (HtmlElement element in WB.Document.All)
                     {
-                        if (link.GetAttribute("className") == "ytp-error-content-wrap")
-                        {
-                            MessageBox.Show("");
-                        }
+                        textBox1.Text += element.InnerHtml + Environment.NewLine;
                     }
-                    //textBox1.Text = WB.Document.GetElementById("player").Children[0]
+                    //textBox1.Text = WB.Document.GetElementById("player").Children[0].GetElementsByTagName("div").Count.ToString();//.GetElementsByTagName("div").Count.ToString();
+                    //textBox1.Text = WB.Document.GetElementById("player").Children[0].GetElementsByTagName("span").Count.ToString();
                 }
                 catch { }
-
-                //textBox1.Text = WB.Document.GetElementById("player").FirstChild.InnerHtml;//WB.Document.ActiveElement.InnerHtml;//WB.Document.GetElementsByTagName("full-frame").GetElementsByName("ytp-error html5-stop-propagation").Count.ToString();
-
-                //textBox1.Text = WB.Document.GetElementsByTagName("full-frame").Count.ToString();
-                //textBox1.Text = WB.Document.GetElementById("ytp-error-content").InnerText;
-                if (WB.DocumentText.Contains("ytp-error html5-stop-propagation"))
-                {
-                    MessageBox.Show("");
-                    //ytp-error html5-stop-propagation
-                    //ytp-tv-static
-                    //ytp-error-content
-                    //ytp-error-content-wrap
-                    //This video contains content from VEVO. It is restricted from playback on certain sites.
-                    UnavailableEmbed = true;
-                    //WB.GoBack();
-                    //MessageBox.Show("");
-                }
             }
 
 
@@ -125,6 +108,20 @@ namespace Overlay
 
         void WB_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
+            if (WB.Document != null)
+            {
+                try
+                {
+                    foreach (HtmlElement element in WB.Document.GetElementById("player").All)
+                    {
+                        textBox1.Text += element.InnerHtml + Environment.NewLine;
+                    }
+                    //textBox1.Text = WB.Document.GetElementById("player").Children[0].GetElementsByTagName("div").Count.ToString();//.GetElementsByTagName("div").Count.ToString();
+                    //textBox1.Text = WB.Document.GetElementById("player").Children[0].GetElementsByTagName("span").Count.ToString();
+                }
+                catch { }
+            }
+
             if (WB.Document != null)
             {
                 label2.Text = "Now playing: " + WB.Document.Title.Replace(" - YouTube", "");
@@ -168,7 +165,8 @@ namespace Overlay
             {
                 WB.ScrollBarsEnabled = true;
                 //WB.Navigate("https://www.google.com/?gws_rd=ssl#q=" + web_search.Text.Replace(" ", "+"));
-                WB.Navigate("https://www.youtube.com/embed/e-ORhEE9VVg?feature=player_embedded&autoplay=1"); //Testing blocked videos
+                WB.Navigate("https://www.youtube.com/embed/PGhuZSBq-x8?feature=player_embedded&autoplay=1"); //working video
+                //WB.Navigate("https://www.youtube.com/embed/e-ORhEE9VVg?feature=player_embedded&autoplay=1"); //non working video
                // WB.Navigate("https://www.youtube.com/results?search_query=" + web_search.Text.Replace(" ", "+"));
             }
         }
